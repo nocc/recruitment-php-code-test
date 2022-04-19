@@ -69,10 +69,19 @@ class ProductHandlerTest extends TestCase
     public function testGetProductBySortAndType()
     {
         $p = new ProductHandler();
-        $products_1 = $p->getProductBySortAndType($this->products,'');
+        $products_1 = $p->getProductBySortAndType($this->products, '');
         $this->assertEquals(5, $products_1[5]['price']);
 
         $products_2 = $p->getProductBySortAndType($this->products);
         $this->assertEquals(40, $products_2[0]['price']);
+    }
+
+    public function testGetProductByUnixTime()
+    {
+        $p = new ProductHandler();
+        $products = $p->getProductByUnixTime($this->products);
+
+        var_dump($products);
+        $this->assertEquals(true, is_int($products[0]['create_at']) && $products[0]['create_at'] > 0);
     }
 }

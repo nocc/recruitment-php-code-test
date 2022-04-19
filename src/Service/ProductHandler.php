@@ -38,6 +38,7 @@ class ProductHandler
         foreach ($products as &$product){
             $product['create_at'] = $this->getUnixTime($product['create_at']);
         }
+        return $products;
     }
 
     public function getUnixTime($time_str)
