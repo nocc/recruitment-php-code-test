@@ -36,19 +36,25 @@ class ThinkLogHandler extends AppLoggerAbstract
     public function info($message)
     {
         // TODO: Implement info() method.
-        Log::info(strtoupper($message));
+        Log::info($this->formatMsg($message));
     }
 
     public function error($message)
     {
         // TODO: Implement error() method.
-        Log::error(strtoupper($message));
+        Log::error($this->formatMsg($message));
     }
 
 
     public function debug($message)
     {
         // TODO: Implement debug() method.
-        Log::debug(strtoupper($message));
+        Log::debug($this->formatMsg($message));
+    }
+
+
+    public function formatMsg($message)
+    {
+        return strtoupper($message);
     }
 }
