@@ -1,4 +1,4 @@
 /.idea
+/logs
 .phpunit.result.cache
 vendor
-/logs
