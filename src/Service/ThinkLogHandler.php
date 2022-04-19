@@ -53,6 +53,11 @@ class ThinkLogHandler extends AppLoggerAbstract
     }
 
 
+    /**
+     * 格式化日志
+     * @param $message
+     * @return string
+     */
     public function formatMsg($message)
     {
         return strtoupper($message);
