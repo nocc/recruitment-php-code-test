@@ -65,4 +65,14 @@ class ProductHandlerTest extends TestCase
 
         $this->assertEquals(143, $totalPrice);
     }
+
+    public function testGetProductBySortAndType()
+    {
+        $p = new ProductHandler();
+        $products_1 = $p->getProductBySortAndType($this->products,'');
+        $this->assertEquals(5, $products_1[5]['price']);
+
+        $products_2 = $p->getProductBySortAndType($this->products);
+        $this->assertEquals(40, $products_2[0]['price']);
+    }
 }
